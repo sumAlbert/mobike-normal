@@ -38,7 +38,6 @@ public class PutuoAddress extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException ,IOException{
         String result=request.getParameter("result");
         int handing_num = Integer.parseInt(request.getParameter("num"));
-        System.out.println(result);
         saveHanding(handing_num,result);
         getBorder(handing_num);
         request.getParameter("num");
@@ -62,7 +61,6 @@ public class PutuoAddress extends HttpServlet {
                 JSONArray jsonArray=JSONArray.fromObject(result);
                 for(int i=0;i<jsonArray.size();i++){
                     JSONObject jsonObject=jsonArray.getJSONObject(i);
-                    String id=jsonObject.getString("index");
                     String lng=jsonObject.getString("lng");
                     String lat=jsonObject.getString("lat");
                     String province = jsonObject.getString("province");
@@ -70,11 +68,13 @@ public class PutuoAddress extends HttpServlet {
                     String district = jsonObject.getString("district");
                     String street = jsonObject.getString("street");
                     String streetNumber = jsonObject.getString("streetNumber");
-                    String sql="insert into shanghai_address_info (id,lng,lat,province,city,district,street,streetNumber) values ("+id+",\""+lng+"\",\""+lat+"\",\""+province+"\",\""+city+"\",\""+district+"\",\""+street+"\",\""+streetNumber+"\")";
-                    System.out.println(sql);
-                    Statement statement=connection.createStatement();
-                    statement.execute(sql);
-                    statement.close();
+                    if(district.equals("普陀区")){
+                        String sql="insert into putuo_address_info (lng,lat,province,city,district,street,streetNumber) values (\""+lng+"\",\""+lat+"\",\""+province+"\",\""+city+"\",\""+district+"\",\""+street+"\",\""+streetNumber+"\")";
+                        System.out.println(sql);
+                        Statement statement=connection.createStatement();
+                        statement.execute(sql);
+                        statement.close();
+                    }
                 }
             }catch (Exception exception){
                 logger.warning("数据库存值失败");
@@ -83,24 +83,9 @@ public class PutuoAddress extends HttpServlet {
         }
     }
     protected void getBorder(int handing_num){
-        try {
-            int next_num = handing_num+1;
-            Statement statement=connection.createStatement();
-            String sql="select * from shanghai_border_bottom limit "+String.valueOf(next_num)+",1";
-            ResultSet resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                start_lng=resultSet.getDouble("lng");
-                start_lat=resultSet.getDouble("lat");
-            }
-            sql="select * from shanghai_border_upper limit "+String.valueOf(next_num)+",1";
-            resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                stop_lng=resultSet.getDouble("lng");
-                stop_lat=resultSet.getDouble("lat");
-            }
-        }catch (Exception exception){
-            logger.warning("数据库取值失败");
-            exception.printStackTrace();
-        }
+        start_lat=31.224;
+        stop_lat=31.310;
+        start_lng=121.330+handing_num*0.001;
+        stop_lng=start_lng;
     }
 }

@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    var num=469;
+    var num=0;
     var result="";
     var loop_lock=false;
-    var index=135301;
+    var index=0;
     var myGeo = new BMap.Geocoder();
     var start_lng;
     var stop_lng;
@@ -14,7 +14,7 @@ $(document).ready(function(){
     function updateInfo(){
         $.ajax({
             type : "POST",
-            url : "/Info",
+            url : "/PutuoAddress",
             dataType : "text",
             data : {
                 num : num ,
@@ -75,7 +75,7 @@ $(document).ready(function(){
             }
             else{
                 var next_lng=start_lng;
-                var next_lat=handing_lat+0.002;
+                var next_lat=handing_lat+0.001;
                 setTimeout(function(){geocodeSearch(next_lng,next_lat);},100);
             }
         }
