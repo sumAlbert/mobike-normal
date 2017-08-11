@@ -8,17 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>$Title$</title>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=EePmxxtX1VOjXV1BYXNDm4Vzvr1fEzDj"></script>
-    <link href="css/Info.css"></head>
+    <link rel="stylesheet" type="text/css"  href="./css/Info.css">
   </head>
   <body>
-  $END$
-  <button id="start">start</button>
-  <div class="console"></div>
-  <div class="result"></div>
+  <div id="start">start</div>
+  <div class="result" id="result"></div>
   </body>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/Info.js"></script>
