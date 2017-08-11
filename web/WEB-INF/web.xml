@@ -11,4 +11,12 @@
         <servlet-name>Info</servlet-name>
         <url-pattern>/Info</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>PutuoAddress</servlet-name>
+        <servlet-class>PutuoAddress</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PutuoAddress</servlet-name>
+        <url-pattern>/PutuoAddress</url-pattern>
+    </servlet-mapping>
 </web-app>

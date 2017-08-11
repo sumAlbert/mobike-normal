@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class Info extends HttpServlet {
+public class PutuoAddress extends HttpServlet {
     private final String DB_URL="jdbc:mysql://localhost:3306/ofo?useUnicode=true&characterEncoding=UTF-8&useSSL=true";
     private final String USER="root";
     private final String PW="123aaaaaa";
@@ -23,7 +23,7 @@ public class Info extends HttpServlet {
     private double stop_lng;
     private double stop_lat;
     private Logger logger = Logger.getLogger("Info");
-    public Info(){
+    public PutuoAddress(){
         super();
         try{
             Driver driver=new com.mysql.jdbc.Driver();
