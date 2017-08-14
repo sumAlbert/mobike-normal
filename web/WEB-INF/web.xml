@@ -19,4 +19,12 @@
         <servlet-name>PutuoAddress</servlet-name>
         <url-pattern>/PutuoAddress</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>PutuoBlockAddress</servlet-name>
+        <servlet-class>PutuoBlockAddress</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PutuoBlockAddress</servlet-name>
+        <url-pattern>/PutuoBlockAddress</url-pattern>
+    </servlet-mapping>
 </web-app>
