@@ -27,4 +27,12 @@
         <servlet-name>PutuoBlockAddress</servlet-name>
         <url-pattern>/PutuoBlockAddress</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>PutuoBlockPerRoom</servlet-name>
+        <servlet-class>PutuoBlockPerRoom</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PutuoBlockPerRoom</servlet-name>
+        <url-pattern>/PutuoBlockPerRoom</url-pattern>
+    </servlet-mapping>
 </web-app>
