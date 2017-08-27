@@ -35,4 +35,12 @@
         <servlet-name>PutuoBlockPerRoom</servlet-name>
         <url-pattern>/PutuoBlockPerRoom</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>PutuoSubway</servlet-name>
+        <servlet-class>PutuoSubway</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PutuoSubway</servlet-name>
+        <url-pattern>/PutuoSubway</url-pattern>
+    </servlet-mapping>
 </web-app>
