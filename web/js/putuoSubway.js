@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var num=-1;
+    var num=53453;
     var subway_count=0;
     var subwayX=[];
     var subwayY=[];
@@ -12,7 +12,7 @@ $(document).ready(function(){
         updateInfo();
     });
     function updateInfo(){
-        if(num==-1){
+        if(num==53453){
             $.ajax({
                 url: "PutuoSubway",
                 type: "POST",
@@ -30,7 +30,7 @@ $(document).ready(function(){
                     setTimeout(function () {
                         num++;
                         updateInfo();
-                    },1000)
+                    },1)
                 },
                 error:function(){
                     alert("error");

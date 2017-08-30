@@ -36,7 +36,7 @@ public class PutuoSubway extends HttpServlet {
         String num=request.getParameter("num");
         Logger logger=Logger.getLogger(Thread.currentThread().getStackTrace()[1].getClassName());
         logger.info("The num is "+num);
-        if(num.equals("-1")){
+        if(num.equals("53453")){
             try {
                 JSONArray jsonArray=new JSONArray();
                 Statement statement=connection.createStatement();
