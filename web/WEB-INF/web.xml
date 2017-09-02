@@ -43,4 +43,20 @@
         <servlet-name>PutuoSubway</servlet-name>
         <url-pattern>/PutuoSubway</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>OneDayData</servlet-name>
+        <servlet-class>OneDayData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OneDayData</servlet-name>
+        <url-pattern>/OneDayData</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LujiazuiOneDay</servlet-name>
+        <servlet-class>LujiazuiOneDay</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LujiazuiOneDay</servlet-name>
+        <url-pattern>/LujiazuiOneDay</url-pattern>
+    </servlet-mapping>
 </web-app>
